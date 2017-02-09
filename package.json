@@ -1,0 +1,35 @@
+{
+  "name": "streamwall",
+  "version": "0.1.0",
+  "description": "Web interface that compounds speaker's screen and webcam video to improve your events streaming appearance using WebRTC",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "sudo node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neokore/streamwall.git"
+  },
+  "keywords": [
+    "streaming",
+    "wall",
+    "video",
+    "pip",
+    "events"
+  ],
+  "author": "Raúl Yeguas",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/neokore/streamwall/issues"
+  },
+  "homepage": "https://github.com/neokore/streamwall#readme",
+  "dependencies": {
+    "dns": "^0.2.2",
+    "express": "^4.14.0",
+    "fs": "0.0.1-security",
+    "os": "^0.1.1",
+    "ws": "^1.1.1"
+  },
+  "devDependencies": {}
+}
