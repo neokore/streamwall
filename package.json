@@ -1,6 +1,6 @@
 {
   "name": "streamwall",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Web interface that compounds speaker's screen and webcam video to improve your events streaming appearance using WebRTC",
   "main": "app.js",
   "scripts": {
