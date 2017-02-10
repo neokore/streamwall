@@ -29,7 +29,7 @@
       standard: {
         audio: false,
         video: {
-          mediaSource: 'window', // 'screen' || 'window' || 'application'
+          mediaSource: config.screenSharingMode, // 'screen' || 'window' || 'application'
           maxWidth: 1280,
           maxHeight: 720
         }
@@ -64,9 +64,6 @@
   function initSharing () {
     peerConn = new RTCPeerConnection(peerConnCfg);
     peerConn.addEventListener('icecandidate', onIceCandidateHandler);
-    // peerConn.addEventListener('addstream', onTrackHandler);
-    // peerConn.addEventListener('track', onTrackHandler);
-    // peerConn.onaddstream = onTrackHandler;
 
     navigator.getUserMedia(desktopOptions, function (stream) {
       localVideoStream = stream;

@@ -43,12 +43,12 @@
     peerConn.close();
     peerConn = null;
     if (localVideoStream) {
-      localVideoStream.getTracks().forEach(function (track) {
-        track.stop();
-      });
       localVideoElem.src = '';
+      localVideoElem.classList.add('hide');
     }
-    if (remoteVideoElem) remoteVideoElem.src = '';
+    if (remoteVideoElem) {
+      remoteVideoElem.src = URL.createObjectURL(localVideoStream);
+    }
   }
 
   wsConn.onmessage = function (e) {
@@ -86,6 +86,10 @@
 
   function onAddStreamHandler (e) {
     remoteVideoElem.src = URL.createObjectURL(e.stream);
+    if (localVideoStream) {
+      localVideoElem.src = URL.createObjectURL(localVideoStream);
+      localVideoElem.classList.remove('hide');
+    }
   }
 
   initialize();
