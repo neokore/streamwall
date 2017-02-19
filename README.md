@@ -19,3 +19,4 @@ Version 50+. Needs to add your domain into the `media.getusermedia.screensharing
 
 ## Credits
 Background image by [Max Ostrozhinskiy](https://unsplash.com/@maxon).
+Computer sharing by creative outlet from the Noun Project.

@@ -3,16 +3,30 @@
 <head>
   <meta charset="utf-8">
   <title>StreamWall</title>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="./styles/styles.min.css" />
 </head>
-<body>
-  <header></header>
+<body class="welcome">
+  <header>
+    <h1>StreamWall</h1>
+  </header>
   <main>
     <nav>
-      <ul>
-        <li><a href="./localwall.html">Local stream wall</a></li>
-        <li><a href="./sharer.html">Remote screen share</a></li>
-        <li><a href="./remotewall.html">Remote stream wall</a></li>
-      </ul>
+      <div id="wallLocal">
+        <h2>Standalone streaming</h2>
+        <img src="./img/standalone.svg" />
+        <div class="buttons">
+          <a class="button" href="./localwall.html">Go standalone</a>
+        </div>
+      </div>
+      <div id="wallRemote">
+        <h2>Remote shared screen streaming</h2>
+        <img src="./img/remote.svg" />
+        <div class="buttons">
+          <a class="button" href="./sharer.html">Share this screen</a>
+          <a class="button" href="./remotewall.html">Receive remote shared screen</a>
+        </div>
+      </div>
     </nav>
   </main>
   <footer></footer>
