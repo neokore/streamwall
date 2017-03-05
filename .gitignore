@@ -1,3 +1,6 @@
+# Project own files
+client/js/config.js
+
 # Logs
 logs
 *.log
