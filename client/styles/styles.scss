@@ -1,4 +1,4 @@
-// compileOnSave: true, compileCompressed: ./styles.min.css
+// compileOnSave: true
 
 $mainColor: #000;
 $compColor: #FFF;
@@ -124,9 +124,12 @@ body {
 
   &.wall {
     main {
+      padding: 0 !important;
+      background-color: #000;
+
       height: 100%;
       position: relative;
-      background: url('../img/bg.png') center no-repeat;
+      // background: url('../img/bg.png') center no-repeat;
       background-size: cover;
       padding: 0 3.6vw;
       display: flex;
@@ -151,6 +154,9 @@ body {
       }
 
       .rightSide {
+        flex: 1 1 100% !important;
+        margin: 0 !important;
+
         display: flex;
         flex: 0 0 64.84vw;
         flex-direction: column;
@@ -169,6 +175,9 @@ body {
         background-color: #000;
 
         &#desktop {
+          margin-top: 0 !important;
+          max-height: 100% !important;
+
           flex: 0 0 64.814vh;
           max-height: 64.814vh;
           align-self: stretch;
@@ -222,6 +231,7 @@ body {
       }
 
       #title {
+        display: none !important;
         background-color: $neutral1;
         padding: 36px 28px 6.48vh;
 

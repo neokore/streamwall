@@ -33,8 +33,10 @@
     peerConn.addEventListener('addstream', onAddStreamHandler);
 
     navigator.getUserMedia(videoOptions, function (stream) {
-      localVideoStream = stream;
-      localVideoElem.srcObject = localVideoStream;
+      if (localVideoElem) {
+        localVideoStream = stream;
+        localVideoElem.srcObject = localVideoStream;
+      }
       createAndSendAnswer();
     }, function (error) { console.log(error); });
   }
