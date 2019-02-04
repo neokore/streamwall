@@ -67,7 +67,7 @@
 
     navigator.getUserMedia(desktopOptions, function (stream) {
       localVideoStream = stream;
-      localVideoElem.src = URL.createObjectURL(localVideoStream);
+      localVideoElem.srcObject = localVideoStream;
       peerConn.addStream(localVideoStream);
       createAndSendOffer();
     }, function (error) { console.log(error); });

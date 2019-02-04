@@ -1,6 +1,8 @@
+// compileOnSave: true, compileCompressed: ./styles.min.css
+
 $mainColor: #000;
 $compColor: #FFF;
-$neutral1: #3a3a3a;
+$neutral1: #333332;
 
 * { padding: 0; margin: 0; box-sizing: border-box; }
 
@@ -31,12 +33,13 @@ a {
 
 body {
   height: 100vh;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-size: 3.33vh;
 
   &.welcome {
     display: flex;
     flex-direction: column;
-    background: url('../img/bg.jpg') center no-repeat;
+    background: url('../img/bg.png') center no-repeat;
     background-size: 100vw;
 
     header {
@@ -64,7 +67,7 @@ body {
 
         &:after {
           content: '';
-          background: url('../img/bg.jpg') center;
+          background: url('../img/bg.png') center;
           background-size: 100vw;
           display: block;
           height: 100%;
@@ -123,40 +126,116 @@ body {
     main {
       height: 100%;
       position: relative;
-      background: url('../img/bg.jpg') center no-repeat;
+      background: url('../img/bg.png') center no-repeat;
       background-size: cover;
-      padding: 50px;
+      padding: 0 3.6vw;
       display: flex;
       flex-direction: row;
 
       .leftSide {
-        flex: 0 0 75%;
+        flex: 0 0 26vw;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        padding-right: 50px;
+        align-items: stretch;
+        justify-content: space-between;
+        background-color: transparentize($neutral1, .28);
+
+        .bigSpace {
+          flex: 1 0 64.814vh;
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          justify-content: space-between;
+          margin-top: 12.22vh;
+        }
       }
 
       .rightSide {
         display: flex;
-        flex: 0 0 25%;
+        flex: 0 0 64.84vw;
         flex-direction: column;
-
-        & > div {
-          flex: 0 0 50%;
-          display: flex;
-          align-items: flex-end;
-          justify-content: center;
-        }
+        justify-content: space-between;
+        align-items: stretch;
+        margin-left: 1.80vw;
       }
 
       #logo {
-        height: 30vh;
+        height: 28.70vh;
+        align-self: center;
       }
 
       video {
         max-width: 100%;
-        max-height: 100%;
+        background-color: #000;
+
+        &#desktop {
+          flex: 0 0 64.814vh;
+          max-height: 64.814vh;
+          align-self: stretch;
+          margin-top: 12.22vh;
+        }
+
+        &#webcam {}
+      }
+
+      .videoContainer {
+        flex: 0 0 26.20vh;
+        position: relative;
+        overflow: hidden;
+
+        video {
+          /* Make video to at least 100% wide and tall */
+          min-width: 100%;
+          min-height: 100%;
+
+          /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+          width: auto;
+          height: auto;
+
+          /* Center the video */
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+        }
+      }
+
+      #message {
+        flex: 0 0 20vh;
+        align-self: stretch;
+        text-align: center;
+        padding-top: 36px;
+
+        p {
+          display: inline-block;
+          padding: 0.72em 1em;
+          font-weight: 300;
+          font-size: 1em;
+          color: #f0db4f;
+          border: 2px solid #f0db4f;
+
+          span {
+            font-weight: 800;
+            color: #fff;
+          }
+        }
+      }
+
+      #title {
+        background-color: $neutral1;
+        padding: 36px 28px 6.48vh;
+
+        h1 {
+          font-weight: 300;
+          font-size: 1em;
+          color: #fff;
+        }
+
+        h2 {
+          font-weight: 500;
+          font-size: 1em;
+          color: #f0db4f;
+        }
       }
 
       .hide {
