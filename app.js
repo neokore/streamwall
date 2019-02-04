@@ -36,6 +36,5 @@ wsServer.broadcast = function (data, exclude) {
   });
 };
 
-dns.lookup(os.hostname(), function (err, address, fam) {
-  console.log('Server ready. Go to https://' + address);
-});
+var ip = require('ip');
+console.log('Server ready. Go to https://' + ip.address());
