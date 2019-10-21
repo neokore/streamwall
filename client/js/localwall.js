@@ -44,7 +44,7 @@
 
   function onDesktopStream(stream) {
     var video = document.querySelector("#desktop");
-    video.src = window.URL.createObjectURL(stream);
+    setVideoStream(video, stream);
   }
 
   navigator.getUserMedia(webcamOptions, onWebcamStream, function(e) {
@@ -53,7 +53,7 @@
 
   function onWebcamStream(stream){
     var video = document.querySelector("#webcam");
-    video.src = window.URL.createObjectURL(stream);
+    setVideoStream(video, stream);
   };
 
 })();

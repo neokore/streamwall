@@ -34,7 +34,7 @@
 
     navigator.getUserMedia(videoOptions, function (stream) {
       localVideoStream = stream;
-      localVideoElem.src = URL.createObjectURL(localVideoStream);
+      setVideoStream(localVideoElem, localVideoStream);
       createAndSendAnswer();
     }, function (error) { console.log(error); });
   }
@@ -47,7 +47,7 @@
       localVideoElem.classList.add('hide');
     }
     if (remoteVideoElem) {
-      remoteVideoElem.src = URL.createObjectURL(localVideoStream);
+      setVideoStream(remoteVideoElem, localVideoStream);
     }
   }
 
@@ -85,9 +85,9 @@
   }
 
   function onAddStreamHandler (e) {
-    remoteVideoElem.src = URL.createObjectURL(e.stream);
+    setVideoStream(remoteVideoElem, e.stream);
     if (localVideoStream) {
-      localVideoElem.src = URL.createObjectURL(localVideoStream);
+      setVideoStream(localVideoElem, localVideoStream);
       localVideoElem.classList.remove('hide');
     }
   }
